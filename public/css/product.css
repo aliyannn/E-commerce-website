@@ -1,0 +1,478 @@
+/* Product Detail Page (PDP) Layout */
+.pdp-section {
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+}
+
+/* Breadcrumbs */
+.breadcrumb-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.breadcrumb-nav a {
+  color: var(--text-secondary);
+  transition: color var(--transition-fast);
+}
+
+.breadcrumb-nav a:hover {
+  color: var(--accent-gold);
+}
+
+.breadcrumb-separator {
+  color: var(--border-medium);
+}
+
+.breadcrumb-current {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* PDP Grid (Gallery + Purchase Panel) */
+.pdp-layout {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: start;
+  margin-bottom: 5rem;
+}
+
+/* Gallery Section */
+.pdp-gallery-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.pdp-main-image-box {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  background-color: var(--bg-secondary);
+  border-radius: var(--radius-xs);
+}
+
+.pdp-main-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.pdp-main-image:hover {
+  transform: scale(1.08);
+  cursor: zoom-in;
+}
+
+.pdp-badge {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  background-color: rgba(250, 248, 245, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 0.4rem 0.9rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: 1px solid rgba(235, 229, 219, 0.9);
+}
+
+.pdp-thumbnails {
+  display: flex;
+  gap: 0.85rem;
+  overflow-x: auto;
+}
+
+.pdp-thumb-item {
+  width: 90px;
+  aspect-ratio: 3 / 4;
+  flex-shrink: 0;
+  border-radius: var(--radius-xs);
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all var(--transition-fast);
+  opacity: 0.75;
+}
+
+.pdp-thumb-item:hover,
+.pdp-thumb-item.active {
+  opacity: 1;
+  border-color: var(--accent-gold);
+}
+
+.pdp-thumb-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Details & Purchase Panel (Right Sticky) */
+.pdp-info-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  position: sticky;
+  top: calc(var(--header-height) + 2rem);
+}
+
+.pdp-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+}
+
+.pdp-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.2vw, 2.75rem);
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+
+.pdp-rating-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.pdp-rating-text {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.pdp-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.pdp-current-price {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-family: var(--font-serif);
+}
+
+.pdp-orig-price {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
+
+.pdp-installments {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.pdp-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+/* Color Selection */
+.pdp-color-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.pdp-color-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.pdp-color-selected {
+  color: var(--text-secondary);
+  font-weight: 400;
+  text-transform: none;
+}
+
+.pdp-swatches-list {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.pdp-swatch-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 0 0 1px var(--border-medium);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.pdp-swatch-btn.active,
+.pdp-swatch-btn:hover {
+  box-shadow: 0 0 0 2px var(--accent-charcoal);
+  transform: scale(1.1);
+}
+
+/* Size Selection */
+.pdp-size-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.pdp-size-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pdp-size-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.btn-size-guide {
+  font-size: 0.75rem;
+  color: var(--accent-gold);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.pdp-sizes-list {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.pdp-size-btn {
+  min-width: 48px;
+  height: 44px;
+  padding: 0 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid var(--border-medium);
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.pdp-size-btn:hover {
+  border-color: var(--text-primary);
+}
+
+.pdp-size-btn.active {
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+  border-color: var(--text-primary);
+}
+
+/* Quantity & Action Buttons */
+.pdp-actions-row {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.qty-stepper {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-xs);
+  background-color: var(--bg-surface);
+}
+
+.qty-btn {
+  width: 44px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.qty-btn:hover {
+  background-color: var(--bg-secondary);
+}
+
+.qty-input {
+  width: 44px;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  background: none;
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+}
+
+.qty-input:focus {
+  outline: none;
+}
+
+.btn-add-to-bag {
+  flex: 1;
+  height: 50px;
+  font-size: 0.85rem;
+  letter-spacing: 0.16em;
+}
+
+.btn-wishlist-pdp {
+  width: 50px;
+  height: 50px;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-xs);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-primary);
+  background-color: var(--bg-surface);
+  transition: all var(--transition-fast);
+}
+
+.btn-wishlist-pdp:hover,
+.btn-wishlist-pdp.active {
+  color: var(--color-error);
+  border-color: var(--color-error);
+}
+
+.btn-buy-now {
+  width: 100%;
+  height: 48px;
+  border: 1px solid var(--text-primary);
+  background-color: transparent;
+  color: var(--text-primary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-radius: var(--radius-xs);
+  transition: all var(--transition-fast);
+}
+
+.btn-buy-now:hover {
+  background-color: var(--text-primary);
+  color: var(--bg-primary);
+}
+
+/* Accordion Details */
+.pdp-accordions {
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.accordion-item {
+  border-bottom: 1px solid var(--border-light);
+}
+
+.accordion-header {
+  width: 100%;
+  padding: 1.1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  text-align: left;
+}
+
+.accordion-icon {
+  font-size: 1.25rem;
+  font-weight: 300;
+  transition: transform var(--transition-normal);
+}
+
+.accordion-item.open .accordion-icon {
+  transform: rotate(45deg);
+}
+
+.accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease-out;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+.accordion-item.open .accordion-body {
+  max-height: 500px;
+  padding-bottom: 1.25rem;
+}
+
+.accordion-body ul {
+  padding-left: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.accordion-body li {
+  margin-bottom: 0.35rem;
+}
+
+/* Trust Perks List */
+.pdp-trust-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+  padding: 1.25rem 0;
+  margin-top: 0.5rem;
+  border-top: 1px solid var(--border-light);
+}
+
+.pdp-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.pdp-trust-item svg {
+  width: 18px;
+  height: 18px;
+  color: var(--accent-gold);
+  flex-shrink: 0;
+}
+
+/* Related Edit */
+.related-section {
+  padding-top: 4rem;
+  border-top: 1px solid var(--border-light);
+}
+
+@media (max-width: 900px) {
+  .pdp-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .pdp-info-panel {
+    position: static;
+  }
+}

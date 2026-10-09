@@ -1,0 +1,13 @@
+{
+  "name": "atelier-aurelia-ecommerce",
+  "version": "1.0.0",
+  "description": "Atelier Aurélia - Luxury Clothing Online Store",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
